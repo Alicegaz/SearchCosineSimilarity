@@ -11,7 +11,10 @@ public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
 
         /*** creating the list of documents paths to index****/
-        String docsPath = "/Users/alisa/Desktop/test_data";
+        String dir = System.getProperty("user.dir");
+
+        dir = dir.substring(0, dir.length()-"sample/".length());
+        String docsPath = dir + "/test_data";
         IndexingFiles indexingFiles = new IndexingFiles();
         //System.out.println(args[0]);
         String s = args[0];
@@ -34,6 +37,7 @@ public class Main {
 
         indexingFiles.SortDictionary();
         indexingFiles.search(s, K);
+
         //indexingFiles.GapEncode();
         //indexingFiles.VBEncode();
 

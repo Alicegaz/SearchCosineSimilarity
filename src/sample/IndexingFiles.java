@@ -96,7 +96,7 @@ public class IndexingFiles {
                         }
                     }
                 }
-                System.out.println("adding " + docs_paths.get(i) + " " + pos + " words");
+                //System.out.println("adding " + docs_paths.get(i) + " " + pos + " words");
             }
             pos = 0;
         }

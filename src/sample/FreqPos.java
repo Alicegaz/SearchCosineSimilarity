@@ -10,12 +10,20 @@ and for each document there is a corresponding list of positions in
  */
 public class FreqPos {
     double idf;
-    LinkedList<Integer> postings_list = new LinkedList<>();
-    LinkedList<Double> tfs_list = new LinkedList<>();
-    LinkedList<LinkedList<Integer>> positions_lists = new LinkedList<LinkedList<Integer>>();
-    int count = 0;
+    LinkedList<Integer> postings_list =
+            new LinkedList<>();
 
-    /**creation of the structure without the initial parameters is not allowed**/
+    LinkedList<Double> tfs_list =
+            new LinkedList<>();
+
+    LinkedList<LinkedList<Integer>> positions_lists =
+            new LinkedList<LinkedList<Integer>>();
+
+    int count = 0;
+    /**creation of the structure without the initial
+     * parameters is not allowed**/
+
+
     public FreqPos(int num, int pos)
     {
         idf = 0;
@@ -24,8 +32,8 @@ public class FreqPos {
         positions_lists.add(count, positions);
         postings_list.add(num);
     }
-
-    /** here we assume that we are not scipping the documents order, indexing documents one by one***/
+    /** here we assume that we are not scipping
+     * the documents order, indexing documents one by one***/
     public void add(int num, int pos)
     {
 
@@ -72,7 +80,6 @@ public class FreqPos {
             }
         }
     }
-
     public void reset_postingsList(LinkedList<Integer> list)
     {
         postings_list = list;
