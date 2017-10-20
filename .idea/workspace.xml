@@ -2,26 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0af7e081-a5fa-4ebd-a8ad-4e33f0eb54fd" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/inverted_index1/sample/Dictionary" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/inverted_index1/sample/SortedDictionary" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/FreqPos.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/IndexingFiles$MyComparator.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/IndexingFiles$MyComparator2.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/IndexingFiles.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/Main.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/Stemmer.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/inverted_index1/sample/IndexingFiles$MyComparator.class" afterPath="$PROJECT_DIR$/out/production/inverted_index1/sample/IndexingFiles$MyComparator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/inverted_index1/sample/IndexingFiles$MyComparator2.class" afterPath="$PROJECT_DIR$/out/production/inverted_index1/sample/IndexingFiles$MyComparator2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/inverted_index1/sample/IndexingFiles.class" afterPath="$PROJECT_DIR$/out/production/inverted_index1/sample/IndexingFiles.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/inverted_index1/sample/FreqPos.class" afterPath="$PROJECT_DIR$/out/production/inverted_index1/sample/FreqPos.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/inverted_index1/sample/Main.class" afterPath="$PROJECT_DIR$/out/production/inverted_index1/sample/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/inverted_index1/sample/Dictionary.txt" afterPath="$PROJECT_DIR$/out/production/inverted_index1/sample/Dictionary.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/inverted_index1/sample/SortedDictionary.txt" afterPath="$PROJECT_DIR$/out/production/inverted_index1/sample/SortedDictionary.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Dictionary.txt" afterPath="$PROJECT_DIR$/src/sample/Dictionary.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/FreqPos.java" afterPath="$PROJECT_DIR$/src/sample/FreqPos.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/IndexingFiles.java" afterPath="$PROJECT_DIR$/src/sample/IndexingFiles.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/sample/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/SortedDictionary.txt" afterPath="$PROJECT_DIR$/src/sample/SortedDictionary.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,8 +29,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="17" column="503" lean-forward="false" selection-start-line="17" selection-start-column="503" selection-end-line="17" selection-end-column="503" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,13 +38,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexingFiles.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IndexingFiles.class" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/IndexingFiles.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4688">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IndexingFiles.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/IndexingFiles.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="691">
-              <caret line="67" column="31" lean-forward="true" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+            <state relative-caret-position="256">
+              <caret line="382" column="106" lean-forward="false" selection-start-line="382" selection-start-column="106" selection-end-line="382" selection-end-column="106" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2747#2748#0" expanded="true" />
+                <element signature="e#2771#2772#0" expanded="true" />
+                <element signature="e#12866#12882#0" expanded="true" />
+                <element signature="e#13538#13569#0" expanded="true" />
+                <element signature="e#14799#14816#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,7 +78,7 @@
       <file leaf-file-name="Dictionary.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dictionary.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-621">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -80,26 +88,27 @@
       <file leaf-file-name="SortedDictionary.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/SortedDictionary.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-132">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FreqPos.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FreqPos.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/FreqPos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="475">
+              <caret line="77" column="71" lean-forward="false" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="71" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="docComment;class#FreqPos#0" expanded="false" />
+                <element signature="e#500#521#0" expanded="true" />
                 <element signature="docComment;method#FreqPos#0;class#FreqPos#0" expanded="false" />
                 <element signature="method#FreqPos#0;class#FreqPos#0" expanded="false" />
                 <element signature="docComment;method#add#0;class#FreqPos#0" expanded="false" />
                 <element signature="method#add#0;class#FreqPos#0" expanded="false" />
                 <element signature="method#set_idf#0;class#FreqPos#0" expanded="false" />
-                <element signature="method#set_tfs#0;class#FreqPos#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -135,6 +144,9 @@
       <find>syste</find>
       <find>sys</find>
       <find>system</find>
+      <find>system.out</find>
+      <find>N</find>
+      <find>N</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -165,9 +177,9 @@
         <option value="$PROJECT_DIR$/src/run.sh" />
         <option value="$PROJECT_DIR$/src/sample/run.sh" />
         <option value="$PROJECT_DIR$/src/sample/run2.sh" />
-        <option value="$PROJECT_DIR$/src/sample/IndexingFiles.java" />
-        <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/sample/FreqPos.java" />
+        <option value="$PROJECT_DIR$/src/sample/Main.java" />
+        <option value="$PROJECT_DIR$/src/sample/IndexingFiles.java" />
       </list>
     </option>
   </component>
@@ -177,10 +189,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="68" />
-    <option name="y" value="46" />
-    <option name="width" value="766" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-42" />
+    <option name="y" value="23" />
+    <option name="width" value="736" />
     <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -199,9 +211,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -224,7 +236,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -303,14 +315,15 @@
       <workItem from="1503506205442" duration="59091000" />
       <workItem from="1503652679331" duration="8540000" />
       <workItem from="1503919016845" duration="6060000" />
+      <workItem from="1508490068950" duration="15969000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73691000" />
+    <option name="totallyTimeSpent" value="89660000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="68" y="46" width="766" height="784" extended-state="1" />
+    <frame x="-42" y="23" width="736" height="784" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -326,7 +339,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.087467365" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3831522" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -353,12 +366,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/IndexingFiles.java</url>
-          <line>80</line>
+          <line>86</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/IndexingFiles.java</url>
-          <line>98</line>
+          <line>104</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
@@ -370,7 +383,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/sample/IndexingFiles.java</url>
-          <line>216</line>
+          <line>199</line>
           <properties class="sample.IndexingFiles" method="PositionalIntersect">
             <option name="EMULATED" value="true" />
           </properties>
@@ -382,6 +395,80 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/IndexingFiles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="67" column="31" lean-forward="true" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2747#2748#0" expanded="true" />
+            <element signature="e#2771#2772#0" expanded="true" />
+            <element signature="e#12866#12882#0" expanded="true" />
+            <element signature="e#13538#13569#0" expanded="true" />
+            <element signature="e#14799#14816#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/run.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dictionary.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/SortedDictionary.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SortedDictionary.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/FreqPos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#FreqPos#0" expanded="false" />
+            <element signature="e#500#521#0" expanded="true" />
+            <element signature="docComment;method#FreqPos#0;class#FreqPos#0" expanded="false" />
+            <element signature="method#FreqPos#0;class#FreqPos#0" expanded="false" />
+            <element signature="docComment;method#add#0;class#FreqPos#0" expanded="false" />
+            <element signature="method#add#0;class#FreqPos#0" expanded="false" />
+            <element signature="method#set_idf#0;class#FreqPos#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -396,7 +483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -406,6 +492,11 @@
           <caret line="98" column="16" lean-forward="true" selection-start-line="98" selection-start-column="16" selection-end-line="98" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2747#2748#0" expanded="true" />
+            <element signature="e#2771#2772#0" expanded="true" />
+            <element signature="e#12866#12882#0" expanded="true" />
+            <element signature="e#13538#13569#0" expanded="true" />
+            <element signature="e#14799#14816#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -438,7 +529,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -455,13 +545,14 @@
         <state relative-caret-position="915">
           <caret line="61" column="5" lean-forward="false" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#FreqPos#0" expanded="false" />
+            <element signature="e#500#521#0" expanded="true" />
             <element signature="docComment;method#FreqPos#0;class#FreqPos#0" expanded="false" />
             <element signature="method#FreqPos#0;class#FreqPos#0" expanded="false" />
             <element signature="docComment;method#add#0;class#FreqPos#0" expanded="false" />
             <element signature="method#add#0;class#FreqPos#0" expanded="false" />
             <element signature="method#set_idf#0;class#FreqPos#0" expanded="false" />
-            <element signature="method#set_tfs#0;class#FreqPos#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -491,31 +582,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/IndexingFiles$MyComparator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/run2.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Dictionary" />
-    <entry file="file://$PROJECT_DIR$/src/sample/IndexingFiles.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/SortedDictionary" />
     <entry file="file://$PROJECT_DIR$/SortedDictionary.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -527,7 +601,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Dictionary.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-621">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -537,7 +611,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -545,25 +618,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/SortedDictionary.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -575,28 +637,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/IndexingFiles.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/IndexingFiles$MyComparator.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="67" column="31" lean-forward="true" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/IndexingFiles$MyComparator2.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/FreqPos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="77" column="71" lean-forward="false" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#FreqPos#0" expanded="false" />
+            <element signature="e#500#521#0" expanded="true" />
+            <element signature="docComment;method#FreqPos#0;class#FreqPos#0" expanded="false" />
+            <element signature="method#FreqPos#0;class#FreqPos#0" expanded="false" />
+            <element signature="docComment;method#add#0;class#FreqPos#0" expanded="false" />
+            <element signature="method#add#0;class#FreqPos#0" expanded="false" />
+            <element signature="method#set_idf#0;class#FreqPos#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/IndexingFiles.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4688">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="17" column="503" lean-forward="false" selection-start-line="17" selection-start-column="503" selection-end-line="17" selection-end-column="503" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/FreqPos.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/IndexingFiles.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="256">
+          <caret line="382" column="106" lean-forward="false" selection-start-line="382" selection-start-column="106" selection-end-line="382" selection-end-column="106" />
           <folding>
-            <element signature="docComment;class#FreqPos#0" expanded="false" />
-            <element signature="docComment;method#FreqPos#0;class#FreqPos#0" expanded="false" />
-            <element signature="method#FreqPos#0;class#FreqPos#0" expanded="false" />
-            <element signature="docComment;method#add#0;class#FreqPos#0" expanded="false" />
-            <element signature="method#add#0;class#FreqPos#0" expanded="false" />
-            <element signature="method#set_idf#0;class#FreqPos#0" expanded="false" />
-            <element signature="method#set_tfs#0;class#FreqPos#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2747#2748#0" expanded="true" />
+            <element signature="e#2771#2772#0" expanded="true" />
+            <element signature="e#12866#12882#0" expanded="true" />
+            <element signature="e#13538#13569#0" expanded="true" />
+            <element signature="e#14799#14816#0" expanded="true" />
           </folding>
         </state>
       </provider>

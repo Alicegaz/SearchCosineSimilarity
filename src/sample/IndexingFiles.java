@@ -23,11 +23,17 @@ import java.lang.Object;
 public class IndexingFiles {
 
     static int N = 0;
+    int[] y;
     static int K_PARAM = 50;
     static LinkedList<String> docs_paths = new LinkedList<>();
     static Map<String, FreqPos> index = new HashMap<>();
+    double beta = 0.6;
     String normal = "[\\p{Punct}+]";
     String stop = "\\b(a|about|above|across|after|afterwards|again|against|all|almost|alone|along|already|also|although|always|am|among|amongst|amoungst|amount|an|and|another|any|anyhow|anyone|anything|anyway|anywhere|are|around|as|at|back|be|became|because|become|becomes|becoming|been|before|beforehand|behind|being|below|beside|besides|between|beyond|bill|both|bottom|but|by|call|can|cannot|cant|co|computer|con|could|couldnt|cry|de|describe|detail|do|done|down|due|during|each|eg|eight|either|eleven|else|elsewhere|empty|enough|etc|even|ever|every|everyone|everything|everywhere|except|few|fifteen|fify|fill|find|fire|first|five|for|former|formerly|forty|found|four|from|front|full|further|get|give|go|had|has|hasnt|have|he|hence|her|here|hereafter|hereby|herein|hereupon|hers|herse|hi|himse|his|how|however|hundred|i|ie|if|in|inc|indeed|interest|into|is|it|its||tse|keep|last|latter|latterly|least|less|ltd|made|many|may|me|meanwhile|might|mill|mine|more|moreover|most|mostly|move|much|must|my|myse|name|namely|neither|never|nevertheless|next|nine|no|nobody|none|noone|nor|not|nothing|now|nowhere|of|off|often|on|once|one|only|onto|or|other|others|otherwise|our|ours|ourselves|out|over|own|part|per|perhaps|please|put|rather|re|same|see|seem|seemed|seeming|seems|serious|several|she|should|show|side|since|sincere|six|sixty|so|some|somehow|someone|something|sometime|sometimes|somewhere|still|such|system|take|ten|than|that|the|their|them|themselves|then|thence|there|thereafter|thereby|therefore|therein|thereupon|these|they|thick|thin|third|this|those|though|three|through|throughout|thru|thus|to|together|too|top|toward|towards|twelve|twenty|two|un|under|until|up|upon|us|very|via|was|we|well|were|what|whatever|when|whence|whenever|where|whereafter|whereas|whereby|wherein|whereupon|wherever|whether|which|while|whither|who|whoever|whole|whom|whose|why|will|with|within|without|would|yet|you|your|yours|yourself|yourselves)\\b";
+    public IndexingFiles(int[] test)
+    {
+        y = test;
+    }
     public LinkedList<String> listFilesForFolder(final String folder)
     {
 
@@ -117,29 +123,6 @@ public class IndexingFiles {
         wd = m.replaceAll("");
         return wd;
     }
-
-
-    /*<K extends Comparable<K>, V> Map<K, V> sortByKey(final Map<K, V> map, int ascending)
-    {
-        Comparator<K> valueComparator = new Comparator<K>()
-        {
-            private int ascending;
-            public int compare(K w1, K w2)
-            {
-                int compare = w2.compareTo(w1);
-                if (compare == 0) return 1;
-                else return ascending*compare;
-            }
-            public Comparator<K> setParam(int ascending)
-            {
-                this.ascending = ascending;
-                return this;
-            }
-        }.setParam(ascending);
-        Map<K, V> sortedByKey = new TreeMap<K, V>(valueComparator);
-        sortedByKey.putAll(map);
-        return sortedByKey;
-    }*/
 
 
     class MyComparator implements Comparator<Object> {
@@ -280,6 +263,37 @@ public class IndexingFiles {
 
     }
 
+    public void metric(int[] predicted)
+    {
+        int t_p = 0;
+        int t_n = 0;
+        int f_p = 0;
+        int f_n = 0;
+        for (int i = 0; i<predicted.length; i++)
+        {
+            if (predicted[i] == y[i])
+            {
+                if(predicted[i] == 1) {
+                    t_p++;
+                }
+                else t_n++;
+            }
+            else
+            {
+                if(predicted[i] == 0)
+                    f_n++;
+                else
+                    f_p++;
+            }
+        }
+        System.out.println("true positive "+t_p+" true negative "+t_n+" false positive "+f_p+" false negative "+f_n);
+        double precision = (double)t_p/(double)(t_p+f_p);
+
+        double recall = (double)t_p/(double)(t_p+f_n);
+        double f_1 = (1+beta*beta)*(precision*recall/((beta*beta*precision)+recall));
+        System.out.println("precision "+precision+" recall "+recall+" f_1 "+f_1);
+    }
+
     //retrieve K most relevant documents
     public void search(String query, int K) throws InterruptedException
     {
@@ -288,29 +302,10 @@ public class IndexingFiles {
         LinkedList<Integer> docs_list = new LinkedList<Integer>();
 
         LinkedList<Integer> docs_list1 = new LinkedList<Integer>();
-
-        //System.out.println("query ");
-        /*for (int i = 0; i < words.size(); i++)
-        {
-            System.out.println(words.get(i));
-        }*/
-        //getting the list of documents query terms present in pairs, by bi-words
-        for (int i = 0; i< words.size()-1; i++)
-        {
-            if (index.get(words.get(i))!=null && index.get(words.get(i+1))!=null) {
-                LinkedList<Pair<Integer, Pair<Integer, Integer>>> pair_list = PositionalIntersect(index.get(words.get(i)), index.get(words.get(i + 1)), K_PARAM);
-                //System.out.println("words " + words.get(i) + " " + words.get(i+1) + " size "+pair_list.size());
-                for (int j = 0; j < pair_list.size(); j++) {
-                    int doc = pair_list.get(j).getKey();
-                    //System.out.print(doc+ " ");
-                    if (!docs_list1.contains(doc)) {
-                        docs_list1.add(doc);
-                        //System.out.println(doc);
-                    }
-                }
-            }
-        }
-
+        int count = 0;
+        int[] predicted = new int[N];
+        Arrays.fill(predicted, 0);
+        long startTime = System.currentTimeMillis();
         for (int i = 0; i < words.size(); i++)
         {
             if (index.get(words.get(i))!=null) {
@@ -318,77 +313,87 @@ public class IndexingFiles {
                 for (int b = 0; b < t_list.size(); b++) {
                     if (!docs_list.contains(t_list.get(b))) {
                         docs_list.add(t_list.get(b));
+                        predicted[t_list.get(b)] = 1;
                     }
                 }
             }
         }
-
-
-
-        Map<Integer, Double> score_for_doc = new HashMap<Integer, Double>();
-
-        //construct the vector model for the query in the form <doc, score>
-        //for each document
-        int found = 0;
-        for (int i = 0; i < docs_list.size(); i++)
+        long estimatedTime = System.currentTimeMillis() - startTime;
+        System.out.println("time to find docs "+estimatedTime);
+        long  startTime2 = System.currentTimeMillis();
+        if (docs_list.size()==0) {System.out.println("Nothing was found !"); return ;}
+        HashMap<String, Double> frequencymap = new HashMap<String, Double>();
+        for (String w: words
+             ) {
+            if (frequencymap.containsKey(w)) {
+                frequencymap.put(w, frequencymap.get(w) + 1);
+            }
+            else{
+                frequencymap.put(w, (double)1);
+            }
+        }
+        double weight = 0;
+        for (HashMap.Entry<String, Double> entry: frequencymap.entrySet())
         {
-            double score = 0;
-            int doc_num = docs_list.get(i);
-            //System.out.print(" docs_list.get(i) " + doc_num + " ");
-            //for each query term do
-            //score(q, d) = Sum{for t \in q} (tf-idf)
-            for (int j = 0; j < words.size(); j++)
-            {
-                //postings list for the term
-                FreqPos entry = index.get(words.get(j));
-                //determine the index of the document number in the postings list
-                int doc_index = entry.postings_list.indexOf(doc_num);
-                if (entry.idf > 1.0)
+            double tf = (double) (1+Math.log(entry.getValue()/frequencymap.size()));
+            frequencymap.put(entry.getKey(), tf);
+            weight += tf*tf;
+        }
+        weight = Math.sqrt(weight);
+
+        Map<Integer, Pair<Double, Double>> score_for_doc = new HashMap<Integer, Pair<Double, Double>>();
+
+        double[] Scores = new double[docs_list.size()];
+        List<Double>[] new_scores = new List[docs_list.size()];
+        for (int i = 0; i<new_scores.length; i++
+             ) {
+            new_scores[i] = new LinkedList<Double>();
+
+        }
+        double[] Lengths = new double[docs_list.size()];
+        Arrays.fill(Scores, 0);
+        for (HashMap.Entry<String, Double> entry:frequencymap.entrySet())
+        {
+            double word_score = entry.getValue();
+            FreqPos postings_list = index.get(entry.getKey());
+            for (int doc: postings_list.postings_list
+                 ) {
+                //add weighting
+                int doc_index = postings_list.postings_list.indexOf(doc);
+                double tf_doc = postings_list.tfs_list.get(doc_index);
+                if(score_for_doc.containsKey(doc))
                 {
-                    double tf;
-                    if (doc_index < 0)
-                    {
-                        tf = 0;
-                    }
-                    else
-                    {
-                        tf = entry.tfs_list.get(doc_index);
-                    }
-                    double tf_idf = tf * entry.idf;
-                    score +=  tf_idf;
+                    score_for_doc.put(doc, new Pair<Double, Double>(score_for_doc.get(doc).getKey()+word_score*tf_doc, score_for_doc.get(doc).getValue()+tf_doc*tf_doc));
                 }
+                else score_for_doc.put(doc, new Pair<Double, Double>(word_score*tf_doc, tf_doc*tf_doc));
             }
-            if (docs_list1.contains(doc_num))
-            {
-                score+=1;
-            }
-            score_for_doc.put(doc_num, score);
-            found++;
-            MyComparator2 comparator = new MyComparator2(score_for_doc);
-            Map<Integer, Double> tm = new TreeMap<Integer, Double>(comparator);
-            tm.putAll(score_for_doc);
+        }
+        Map<Integer, Double> new_map = new HashMap<Integer, Double>();
+        for (Map.Entry<Integer, Pair<Double, Double>> entry: score_for_doc.entrySet()
+             ) {
+            new_map.put(entry.getKey(), entry.getValue().getKey()/entry.getValue().getValue());
         }
 
-        int count = 0;
+        new_map.entrySet().stream()
+                .sorted((k1, k2) -> -k1.getValue().compareTo(k2.getValue()));
+                //.forEach(k -> System.out.println(k.getKey() + ": " + k.getValue()));
 
-        if (found == 0)
-        {
-            System.out.println("Nothing was found !");
-        }
-        else {
-            System.out.println("K most relevant documents for the query '"+query+"'");
-            for (Map.Entry<Integer, Double> entry : score_for_doc.entrySet()) {
-                if (found < K) {
-                    K = found;
-                }
-                if (count < K) {
-                    int doc = entry.getKey();
-                    System.out.println(docs_paths.get(doc));
-                    count++;
-                }
-                else break;
+
+        long estimatedTime2 = System.currentTimeMillis() - startTime2 + estimatedTime;
+        System.out.println("Time to compute scores, build vectors, compute cosine score "+estimatedTime2);
+        System.out.println("K most relevant documents for the query '"+query+"'");
+        for (Map.Entry<Integer, Double> entry : new_map.entrySet()) {
+            if (new_map.size() < K) {
+                K = Scores.length;
             }
+            if (count < K) {
+                int doc = entry.getKey();
+                System.out.println(docs_paths.get(doc)+" "+entry.getValue());
+                count++;
+            } else break;
+
         }
+        metric(predicted);
     }
 
 }
