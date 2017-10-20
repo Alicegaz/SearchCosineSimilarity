@@ -17,7 +17,7 @@ import java.io.File;
 import java.util.regex.Matcher;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
-
+import java.util.stream.Collectors;
 import java.lang.Object;
 
 public class IndexingFiles {
@@ -313,13 +313,14 @@ public class IndexingFiles {
                 for (int b = 0; b < t_list.size(); b++) {
                     if (!docs_list.contains(t_list.get(b))) {
                         docs_list.add(t_list.get(b));
-                        predicted[t_list.get(b)] = 1;
+
+                        //predicted[t_list.get(b)] = 1;
                     }
                 }
             }
         }
         long estimatedTime = System.currentTimeMillis() - startTime;
-        System.out.println("time to find docs "+estimatedTime);
+        System.out.println("time to find docs "+estimatedTime + " ms");
         long  startTime2 = System.currentTimeMillis();
         if (docs_list.size()==0) {System.out.println("Nothing was found !"); return ;}
         HashMap<String, Double> frequencymap = new HashMap<String, Double>();
@@ -371,19 +372,29 @@ public class IndexingFiles {
         Map<Integer, Double> new_map = new HashMap<Integer, Double>();
         for (Map.Entry<Integer, Pair<Double, Double>> entry: score_for_doc.entrySet()
              ) {
-            new_map.put(entry.getKey(), entry.getValue().getKey()/entry.getValue().getValue());
+            double score = entry.getValue().getKey()/entry.getValue().getValue();
+
+            new_map.put(entry.getKey(), score);
+            //System.out.println("score "+score);
+            if(score>-0.09)
+            {
+                predicted[entry.getKey()] = 1;
+            }
+
         }
 
+
+        Map<Integer, Double> result2 = new LinkedHashMap<>();
         new_map.entrySet().stream()
-                .sorted((k1, k2) -> -k1.getValue().compareTo(k2.getValue()));
-                //.forEach(k -> System.out.println(k.getKey() + ": " + k.getValue()));
+                .sorted(Map.Entry.<Integer, Double>comparingByValue().reversed())
+                .forEachOrdered(x -> result2.put(x.getKey(), x.getValue()));
 
 
         long estimatedTime2 = System.currentTimeMillis() - startTime2 + estimatedTime;
-        System.out.println("Time to compute scores, build vectors, compute cosine score "+estimatedTime2);
+        System.out.println("Time to compute scores, build vectors, compute cosine score "+estimatedTime2+" ms");
         System.out.println("K most relevant documents for the query '"+query+"'");
-        for (Map.Entry<Integer, Double> entry : new_map.entrySet()) {
-            if (new_map.size() < K) {
+        for (Map.Entry<Integer, Double> entry : result2.entrySet()) {
+            if (result2.size() < K) {
                 K = Scores.length;
             }
             if (count < K) {
@@ -392,6 +403,10 @@ public class IndexingFiles {
                 count++;
             } else break;
 
+        }
+        for (int i = 0; i<predicted.length; i++)
+        {
+            System.out.print(predicted[i]+" ");
         }
         metric(predicted);
     }
